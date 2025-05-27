@@ -128,7 +128,7 @@ export default function AboutPage() {
               Meet the experienced professionals who guide our company's vision and operations.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6 max-w-7xl mx-auto">
             <div className="text-center group">
               <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
                 <span className="text-white text-2xl font-bold">RC</span>
@@ -151,6 +151,14 @@ export default function AboutPage() {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">Harendra Ranjitsinh Chudasama</h3>
               <p className="text-bhal-600 font-medium text-sm">Partner</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
+                <span className="text-white text-2xl font-bold">SG</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">Subhash C. Gupta</h3>
+              <p className="text-bhal-600 font-medium text-sm">Sr. G.M.</p>
             </div>
             
             <div className="text-center group">
