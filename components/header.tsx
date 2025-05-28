@@ -38,22 +38,43 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2 sm:space-x-4">
-              <Image
-                src="/images/bhal-logo.png"
-                alt="BHAL Group Logo"
-                width={120}
-                height={40}
-                className="h-8 w-auto sm:h-10"
-              />
-              <div className="h-6 w-px bg-gray-300 sm:h-8"></div>
-              <Image
-                src="/images/rajarshi-logo.png"
-                alt="Rajarshi Construction Co Logo"
-                width={120}
-                height={40}
-                className="h-8 w-auto sm:h-10"
-              />
+            <Link href="/" className="flex items-center">
+              {/* Mobile: Vertical Stack */}
+              <div className="flex flex-col items-center space-y-1 sm:hidden">
+                <Image
+                  src="/images/bhal-logo.png"
+                  alt="BHAL Group Logo"
+                  width={120}
+                  height={40}
+                  className="h-6 w-auto"
+                />
+                <Image
+                  src="/images/rajarshi-logo.png"
+                  alt="Rajarshi Construction Co Logo"
+                  width={120}
+                  height={40}
+                  className="h-6 w-auto"
+                />
+              </div>
+              
+              {/* Desktop: Horizontal Layout */}
+              <div className="hidden sm:flex sm:items-center sm:space-x-2 lg:space-x-4">
+                <Image
+                  src="/images/bhal-logo.png"
+                  alt="BHAL Group Logo"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto lg:h-10"
+                />
+                <div className="h-6 w-px bg-gray-300 lg:h-8"></div>
+                <Image
+                  src="/images/rajarshi-logo.png"
+                  alt="Rajarshi Construction Co Logo"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto lg:h-10"
+                />
+              </div>
               <span className="sr-only">BHAL GROUP & RAJARSHI CONSTRUCTION CO</span>
             </Link>
           </div>
