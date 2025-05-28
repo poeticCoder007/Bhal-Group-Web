@@ -62,60 +62,43 @@ export default function AboutPage() {
       {/* Mission & Values */}
       <section ref={sectionRefs.mission} className="py-16 md:py-24 opacity-0 translate-y-4 transition-all duration-700">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Mission</h2>
-              <p className="mt-4 text-lg text-gray-600">
-                At BHAL Group, our mission is to deliver exceptional construction services that exceed client
-                expectations, while maintaining the highest standards of safety, quality, and environmental
-                responsibility. We are committed to building infrastructure that stands the test of time and contributes
-                positively to communities and industries.
-              </p>
-              <h3 className="mt-8 text-2xl font-bold">Our Values</h3>
-              <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-bhal-800 mt-1 mr-2" />
-                  <div>
-                    <h4 className="font-semibold">Safety First</h4>
-                    <p className="text-gray-600">We prioritize the well-being of our team and communities.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-bhal-800 mt-1 mr-2" />
-                  <div>
-                    <h4 className="font-semibold">Quality Excellence</h4>
-                    <p className="text-gray-600">We deliver superior workmanship in every project.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-bhal-800 mt-1 mr-2" />
-                  <div>
-                    <h4 className="font-semibold">Integrity</h4>
-                    <p className="text-gray-600">We operate with honesty and transparency in all relationships.</p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-bhal-800 mt-1 mr-2" />
-                  <div>
-                    <h4 className="font-semibold">Innovation</h4>
-                    <p className="text-gray-600">We embrace new technologies and methodologies.</p>
-                  </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-8">Our Mission</h2>
+            <p className="mt-4 text-lg text-gray-600 text-center mb-12">
+              At BHAL Group, our mission is to deliver exceptional construction services that exceed client
+              expectations, while maintaining the highest standards of safety, quality, and environmental
+              responsibility. We are committed to building infrastructure that stands the test of time and contributes
+              positively to communities and industries.
+            </p>
+            <h3 className="text-2xl font-bold text-center mb-8">Our Values</h3>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <div className="flex items-start">
+                <CheckCircle2 className="h-6 w-6 text-bhal-800 mt-1 mr-2" />
+                <div>
+                  <h4 className="font-semibold">Safety First</h4>
+                  <p className="text-gray-600">We prioritize the well-being of our team and communities.</p>
                 </div>
               </div>
-            </div>
-            <div className="relative">
-              <Image
-                src="/images/about/construction-team.jpg"
-                alt="Construction team at work"
-                width={600}
-                height={800}
-                className="rounded-lg object-cover h-full"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg max-w-xs">
-                <p className="text-lg font-semibold">
-                  "Building the future requires vision, expertise, and unwavering commitment to excellence."
-                </p>
-                <p className="mt-2 text-gray-600">(Retd.) Ranjitsinh Chudasma, Founder</p>
+              <div className="flex items-start">
+                <CheckCircle2 className="h-6 w-6 text-bhal-800 mt-1 mr-2" />
+                <div>
+                  <h4 className="font-semibold">Quality Excellence</h4>
+                  <p className="text-gray-600">We deliver superior workmanship in every project.</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle2 className="h-6 w-6 text-bhal-800 mt-1 mr-2" />
+                <div>
+                  <h4 className="font-semibold">Integrity</h4>
+                  <p className="text-gray-600">We operate with honesty and transparency in all relationships.</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <CheckCircle2 className="h-6 w-6 text-bhal-800 mt-1 mr-2" />
+                <div>
+                  <h4 className="font-semibold">Innovation</h4>
+                  <p className="text-gray-600">We embrace new technologies and methodologies.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -137,12 +120,9 @@ export default function AboutPage() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Leadership</h3>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-900 to-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">RC</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">(Retd.) Ranjitsinh Chudasma</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Ranjitsinh Chudasama</h3>
                     <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
                     <p className="text-bhal-600 font-semibold text-sm">Founder</p>
                   </div>
@@ -150,12 +130,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-800 to-bhal-700 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">VC</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Late Viramdevsinh Chudasma</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Late Viramdevsinh Chudasama</h3>
                     <p className="text-gray-500 text-sm mb-1">B.Com</p>
                     <p className="text-bhal-600 font-semibold text-sm">Former Partner</p>
                   </div>
@@ -163,12 +140,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-700 to-bhal-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">HC</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Harendra Ranjitsinh Chudasama</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Harendra Ranjitsinh Chudasama</h3>
                     <p className="text-gray-500 text-sm mb-1">B.Sc. Computer Science</p>
                     <p className="text-bhal-600 font-semibold text-sm">Partner</p>
                   </div>
@@ -176,12 +150,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-600 to-bhal-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">SG</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Subhash C. Gupta</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Subhash C. Gupta</h3>
                     <p className="text-gray-500 text-sm mb-1">D.C.E.</p>
                     <p className="text-bhal-600 font-semibold text-sm">Sr. G.M.</p>
                   </div>
@@ -189,12 +160,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-500 to-bhal-400 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">RHC</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Rudraduttsinh H. Chudasama</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Rudraduttsinh H. Chudasama</h3>
                     <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
                     <p className="text-bhal-600 font-semibold text-sm">Partner</p>
                   </div>
@@ -202,12 +170,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-400 to-bhal-300 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">SC</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Shivrajsinh Chudasma</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Shivrajsinh Chudasama</h3>
                     <p className="text-gray-500 text-sm mb-1">MS Civil</p>
                     {showShivrajsinhDetails && (
                       <p className="text-gray-500 text-xs mb-1">With specialization in Construction & Transportation Engineering, PMP, CMQ/OR, CQA, CMIT, LEED Green Associate</p>
@@ -242,12 +207,9 @@ export default function AboutPage() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Management & Engineering</h3>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">SP</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Sanjiv C. Pathak</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Sanjiv C. Pathak</h3>
                     <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
                     <p className="text-blue-600 font-semibold text-sm">General Manager</p>
                   </div>
@@ -255,12 +217,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">MP</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Mukesh G. Parmar</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Mukesh G. Parmar</h3>
                     <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
                     <p className="text-indigo-600 font-semibold text-sm">Sr. Engineer</p>
                   </div>
@@ -268,12 +227,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">KQ</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Kartik Quila</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Kartik Quila</h3>
                     <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
                     <p className="text-indigo-600 font-semibold text-sm">Sr. Engineer</p>
                   </div>
@@ -281,12 +237,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">CB</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Chhaparaj Bhambhala</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Chhaparaj Bhambhala</h3>
                     <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
                     <p className="text-indigo-600 font-semibold text-sm">Sr. Engineer</p>
                   </div>
@@ -294,12 +247,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">TD</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Tarbada Adityabhai Dineshbhai</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Tarbada Adityabhai Dineshbhai</h3>
                     <p className="text-gray-500 text-sm mb-1">D.C.E.</p>
                     <p className="text-violet-600 font-semibold text-sm">D.C.E.</p>
                   </div>
@@ -313,12 +263,9 @@ export default function AboutPage() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Operations & Support</h3>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-purple-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">SM</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Sunil Mandia</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Sunil Mandia</h3>
                     <p className="text-gray-500 text-sm mb-1">I.T.I.</p>
                     <p className="text-purple-600 font-semibold text-sm">Billing</p>
                   </div>
@@ -326,12 +273,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-slate-400 to-slate-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">BP</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Bhadresh D. Patel</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Bhadresh D. Patel</h3>
                     <p className="text-gray-500 text-sm mb-1">B.Com</p>
                     <p className="text-slate-600 font-semibold text-sm">Accounts</p>
                   </div>
@@ -339,12 +283,9 @@ export default function AboutPage() {
               </div>
               
               <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
-                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-slate-400 to-slate-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
-                    <span className="text-white text-sm font-bold">AP</span>
-                  </div>
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Ashok N. Patel</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Ashok N. Patel</h3>
                     <p className="text-gray-500 text-sm mb-1">B.Com</p>
                     <p className="text-slate-600 font-semibold text-sm">Accounts</p>
                   </div>
