@@ -39,8 +39,8 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              {/* Mobile: Vertical Stack */}
-              <div className="flex flex-col items-center space-y-1 sm:hidden">
+              {/* Mobile: Horizontal Layout */}
+              <div className="flex items-center space-x-3 sm:hidden">
                 <Image
                   src="/images/bhal-logo.png"
                   alt="BHAL Group Logo"
@@ -48,13 +48,24 @@ export default function Header() {
                   height={40}
                   className="h-6 w-auto"
                 />
-                <Image
-                  src="/images/rajarshi-logo.png"
-                  alt="Rajarshi Construction Co Logo"
-                  width={120}
-                  height={40}
-                  className="h-6 w-auto"
-                />
+                <div className="h-4 w-px bg-gray-300"></div>
+                {/* Combined Rajarshi Logo for Mobile */}
+                <div className="flex items-center space-x-2">
+                  <Image
+                    src="/images/rajarshi-logo-R.png"
+                    alt="Rajarshi Logo Symbol"
+                    width={24}
+                    height={24}
+                    className="h-8 w-10"
+                  />
+                  <Image
+                    src="/images/rajarshi-logo-text.png"
+                    alt="Rajarshi Construction Co Text"
+                    width={80}
+                    height={20}
+                    className="h-4 w-auto"
+                  />
+                </div>
               </div>
               
               {/* Desktop: Horizontal Layout */}
