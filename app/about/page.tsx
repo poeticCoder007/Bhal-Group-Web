@@ -172,7 +172,7 @@ export default function AboutPage() {
               <div className="group">
                 <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">Shivrajsinh Chudasama</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Shivrajsinh V. Chudasama</h3>
                     <p className="text-gray-500 text-sm mb-1">MS Civil</p>
                     {showShivrajsinhDetails && (
                       <p className="text-gray-500 text-xs mb-1">With specialization in Construction & Transportation Engineering, PMP, CMQ/OR, CQA, CMIT, LEED Green Associate</p>
