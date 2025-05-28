@@ -228,29 +228,81 @@ export default function ProjectsPage() {
       </section>
 
       {/* Client Logos */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-bhal-50 to-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Clients</h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              We're proud to have worked with leading organizations across various industries.
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-bhal-900 mb-4">
+              Trusted by Industry Leaders
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+              We're proud to have partnered with leading organizations across various industries throughout Gujarat and India, 
+              delivering excellence in every project.
             </p>
+            <div className="w-24 h-1 bg-gradient-to-r from-bhal-600 to-bhal-400 mx-auto rounded-full"></div>
           </div>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
-            {[
-              "Linxon India Private Limited",
-              "Ark Golden India Pvt Ltd",
-              "Steelsmith Continental Mfg. Pvt. Ltd.",
-              "Interplex Mazzucchelli Pvt Ltd",
-              "Aluplast India Pvt.Ltd.",
-              "Svaryu Energy Limited",
-            ].map((client, i) => (
-              <div key={i} className="flex items-center justify-center p-4">
-                <div className="h-12 flex items-center justify-center text-center text-sm font-medium text-gray-600 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
-                  {client}
-                </div>
+          
+          {/* Clients Grid */}
+          <div className="relative">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-gradient-to-r from-bhal-100/20 via-transparent to-bhal-100/20 rounded-3xl"></div>
+            
+            <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-bhal-100">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {[
+                  "Linxon India Private Limited",
+                  "Ark Golden India Pvt Ltd",
+                  "Steelsmith Continental Mfg. Pvt. Ltd.",
+                  "Interplex Mazzucchelli Pvt Ltd",
+                  "Aluplast India Pvt.Ltd.",
+                  "Svaryu Energy Limited",
+                  "Mehi Power Transformers",
+                  "Advatech Life Science Pvt Ltd",
+                  "GE T&D India Ltd",
+                  "Rishi FIBC Solutions Pvt. Ltd",
+                  "Koch Chemical Technology Group",
+                  "Koshambh Multitred Pvt Ltd",
+                  "Yashvin Industries",
+                  "Stelmec Limited",
+                  "L & T Construction Vadodara",
+                  "Octane Mineral LLp",
+                  "ABB India Limited",
+                  "Lalit Rohr Fittings Pvt. Ltd.",
+                  "Jindal Rail Infrastructure Ltd",
+                  "EMC LIMITED",
+                  "Sagar Springs Pvt. Ltd.",
+                  "Nandolia Organic Chemicals",
+                  "Saishakti Impression",
+                  "Finolex Industries Ltd",
+                  "Inox Air Products Limited",
+                  "KDAC Chem Pvt. Ltd.",
+                  "Damodar Engineering Co.",
+                  "Teknosteel & Forging Pvt. Ltd.",
+                  "Kemrock Industries & Exports",
+                  "EMCO Limited",
+                  "N.B.C.C. Ltd.",
+                  "Indian Petrochemicals Corporation"
+                ].map((client, i) => (
+                  <div 
+                    key={i} 
+                    className="group relative overflow-hidden"
+                    style={{ animationDelay: `${i * 50}ms` }}
+                  >
+                    <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-xl p-4 h-20 flex items-center justify-center text-center border border-gray-200/50 shadow-sm hover:shadow-lg transition-all duration-500 hover:scale-105 hover:border-bhal-300 group-hover:bg-gradient-to-br group-hover:from-bhal-50 group-hover:to-white">
+                      {/* Subtle background pattern */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-bhal-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                      
+                      {/* Client name */}
+                      <div className="relative z-10 text-sm font-semibold text-gray-700 group-hover:text-bhal-700 transition-colors duration-300 leading-tight px-2">
+                        {client}
+                      </div>
+                      
+                      {/* Hover accent */}
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-bhal-600 to-bhal-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 rounded-b-xl"></div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
