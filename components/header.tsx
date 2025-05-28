@@ -41,42 +41,48 @@ export default function Header() {
             <Link href="/" className="flex items-center">
               {/* Mobile: Horizontal Layout */}
               <div className="flex items-center space-x-3 sm:hidden">
-                <Image
-                  src="/images/bhal-logo.png"
-                  alt="BHAL Group Logo"
-                  width={120}
-                  height={40}
-                  className="h-6 w-auto"
-                />
-                <div className="h-4 w-px bg-gray-300"></div>
+                <div className="flex flex-col items-center justify-center">
+                  <Image
+                    src="/images/bhal-logo.png"
+                    alt="BHAL Group Logo"
+                    width={120}
+                    height={40}
+                    className="h-5 w-auto"
+                  />
+                  <span className="text-[8px] font-medium text-gray-600 mt-0.5">Construction Co.</span>
+                </div>
+                <div className="h-6 w-px bg-gray-300"></div>
                 {/* Combined Rajarshi Logo for Mobile */}
-                <div className="flex items-center space-x-2">
+                <div className="flex items-center justify-center space-x-2">
                   <Image
                     src="/images/rajarshi-logo-R.png"
                     alt="Rajarshi Logo Symbol"
                     width={24}
                     height={24}
-                    className="h-8 w-10"
+                    className="h-8 w-11"
                   />
                   <Image
                     src="/images/rajarshi-logo-text.png"
                     alt="Rajarshi Construction Co Text"
                     width={80}
                     height={20}
-                    className="h-4 w-auto"
+                    className="h-5 w-auto"
                   />
                 </div>
               </div>
               
               {/* Desktop: Horizontal Layout */}
               <div className="hidden sm:flex sm:items-center sm:space-x-2 lg:space-x-4">
-                <Image
-                  src="/images/bhal-logo.png"
-                  alt="BHAL Group Logo"
-                  width={120}
-                  height={40}
-                  className="h-8 w-auto lg:h-10"
-                />
+                <div className="flex flex-col items-center">
+                  <Image
+                    src="/images/bhal-logo.png"
+                    alt="BHAL Group Logo"
+                    width={120}
+                    height={40}
+                    className="h-8 w-auto lg:h-10"
+                  />
+                  <span className="text-xs font-medium text-gray-600 mt-1 lg:text-sm">Construction Co.</span>
+                </div>
                 <div className="h-6 w-px bg-gray-300 lg:h-8"></div>
                 <Image
                   src="/images/rajarshi-logo.png"
