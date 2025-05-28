@@ -38,32 +38,32 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-4">
+            <Link href="/" className="flex items-center space-x-2 sm:space-x-4">
               <Image
                 src="/images/bhal-logo.png"
                 alt="BHAL Group Logo"
                 width={120}
                 height={40}
-                className="h-10 w-auto"
+                className="h-8 w-auto sm:h-10"
               />
-              <div className="h-8 w-px bg-gray-300"></div>
+              <div className="h-6 w-px bg-gray-300 sm:h-8"></div>
               <Image
                 src="/images/rajarshi-logo.png"
                 alt="Rajarshi Construction Co Logo"
                 width={120}
                 height={40}
-                className="h-10 w-auto"
+                className="h-8 w-auto sm:h-10"
               />
               <span className="sr-only">BHAL GROUP & RAJARSHI CONSTRUCTION CO</span>
             </Link>
           </div>
-          <nav className="hidden md:flex md:space-x-8">
+          <nav className="hidden xl:flex xl:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "text-base font-medium transition-colors hover:text-primary",
+                  "text-base font-medium transition-colors hover:text-primary whitespace-nowrap",
                   pathname === item.href ? "text-primary font-semibold" : "text-gray-700",
                 )}
               >
@@ -71,15 +71,15 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <Button asChild>
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
-          <div className="flex md:hidden">
+          <div className="flex xl:hidden">
             <button
               type="button"
-              className="inline-flex items-center justify-center rounded-md p-2 text-gray-700"
+              className="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
@@ -95,24 +95,26 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden">
-          <div className="space-y-1 px-4 pb-5 pt-2">
+        <div className="xl:hidden">
+          <div className="space-y-1 px-4 pb-5 pt-2 bg-white/95 backdrop-blur-sm shadow-lg border-t border-gray-200">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "block py-2 text-base font-medium",
-                  pathname === item.href ? "text-primary font-semibold" : "text-gray-700",
+                  "block py-3 text-base font-medium rounded-md px-3 transition-colors hover:bg-gray-50",
+                  pathname === item.href ? "text-primary font-semibold bg-primary/5" : "text-gray-700",
                 )}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
               </Link>
             ))}
-            <Button asChild className="mt-4 w-full">
-              <Link href="/contact">Contact Us</Link>
-            </Button>
+            <div className="pt-2">
+              <Button asChild className="w-full">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
       )}

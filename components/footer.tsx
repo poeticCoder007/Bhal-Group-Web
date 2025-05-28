@@ -9,22 +9,26 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4 md:grid-cols-2">
           <div className="space-y-4 lg:col-span-2">
             {/* Logos Section */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-3 sm:space-y-0">
-              <Image
-                src="/images/bhal-logo.png"
-                alt="BHAL Group Logo"
-                width={120}
-                height={40}
-                className="h-8 w-auto sm:h-10"
-              />
-              <div className="hidden sm:block h-8 w-px bg-gray-600"></div>
-              <Image
-                src="/images/rajarshi-logo.png"
-                alt="Rajarshi Construction Co Logo"
-                width={120}
-                height={40}
-                className="h-8 w-auto sm:h-10"
-              />
+            <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/bhal-logo.png"
+                  alt="BHAL Group Logo"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto sm:h-10 max-w-[120px]"
+                />
+              </div>
+              <div className="hidden sm:block h-8 w-px bg-gray-600 flex-shrink-0"></div>
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/rajarshi-logo.png"
+                  alt="Rajarshi Construction Co Logo"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto sm:h-10 max-w-[200px]"
+                />
+              </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-md">
               Delivering excellence in industrial construction, civil infrastructure, and support services through our partnership between BHAL Group and Rajarshi Construction Co.

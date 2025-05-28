@@ -1,17 +1,20 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Award, CheckCircle2 } from "lucide-react"
+import { Award, CheckCircle2, ChevronDown, ChevronUp } from "lucide-react"
 
 export default function AboutPage() {
+  const [showShivrajsinhDetails, setShowShivrajsinhDetails] = useState(false)
+  
   const sectionRefs = {
     mission: useRef<HTMLElement>(null),
     timeline: useRef<HTMLElement>(null),
     team: useRef<HTMLElement>(null),
+    teamMembers: useRef<HTMLElement>(null),
     certifications: useRef<HTMLElement>(null),
   }
 
@@ -122,59 +125,231 @@ export default function AboutPage() {
       {/* Leadership/Team */}
       <section ref={sectionRefs.team} className="bg-gray-50 py-16 md:py-24 opacity-0 translate-y-4 transition-all duration-700">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Leadership Team</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              Meet the experienced professionals who guide our company's vision and operations.
+              Meet the experienced professionals who guide our company's vision and drive our operations.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6 max-w-7xl mx-auto">
-            <div className="text-center group">
-              <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-2xl font-bold">RC</span>
+          
+          {/* Leadership */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Leadership</h3>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-900 to-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">RC</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">(Retd.) Ranjitsinh Chudasma</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
+                    <p className="text-bhal-600 font-semibold text-sm">Founder</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">(Retd.) Ranjitsinh Chudasma</h3>
-              <p className="text-bhal-600 font-medium text-sm">Founder</p>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-800 to-bhal-700 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">VC</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Late Viramdevsinh Chudasma</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.Com</p>
+                    <p className="text-bhal-600 font-semibold text-sm">Former Partner</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-700 to-bhal-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">HC</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Harendra Ranjitsinh Chudasama</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.Sc. Computer Science</p>
+                    <p className="text-bhal-600 font-semibold text-sm">Partner</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-600 to-bhal-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">SG</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Subhash C. Gupta</h3>
+                    <p className="text-gray-500 text-sm mb-1">D.C.E.</p>
+                    <p className="text-bhal-600 font-semibold text-sm">Sr. G.M.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-500 to-bhal-400 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">RHC</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Rudraduttsinh H. Chudasama</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
+                    <p className="text-bhal-600 font-semibold text-sm">Partner</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-bhal-400 to-bhal-300 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">SC</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Shivrajsinh Chudasma</h3>
+                    <p className="text-gray-500 text-sm mb-1">MS Civil</p>
+                    {showShivrajsinhDetails && (
+                      <p className="text-gray-500 text-xs mb-1">With specialization in Construction & Transportation Engineering, PMP, CMQ/OR, CQA, CMIT, LEED Green Associate</p>
+                    )}
+                    <div className="flex items-center justify-between">
+                      <p className="text-bhal-600 font-semibold text-sm">External Advisor</p>
+                      <button
+                        onClick={() => setShowShivrajsinhDetails(!showShivrajsinhDetails)}
+                        className="flex items-center text-xs text-bhal-600 hover:text-bhal-700 transition-colors"
+                      >
+                        {showShivrajsinhDetails ? (
+                          <>
+                            <ChevronUp className="w-3 h-3 mr-1" />
+                            Less
+                          </>
+                        ) : (
+                          <>
+                            <ChevronDown className="w-3 h-3 mr-1" />
+                            More
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <div className="text-center group">
-              <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-2xl font-bold">VC</span>
+          </div>
+          
+          {/* Management & Engineering */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Management & Engineering</h3>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">SP</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Sanjiv C. Pathak</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
+                    <p className="text-blue-600 font-semibold text-sm">General Manager</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Late Viramdevsinh Chudasma</h3>
-              <p className="text-bhal-600 font-medium text-sm">Former Partner</p>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">MP</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Mukesh G. Parmar</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
+                    <p className="text-indigo-600 font-semibold text-sm">Sr. Engineer</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">KQ</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Kartik Quila</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
+                    <p className="text-indigo-600 font-semibold text-sm">Sr. Engineer</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">CB</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Chhaparaj Bhambhala</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
+                    <p className="text-indigo-600 font-semibold text-sm">Sr. Engineer</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">TD</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Tarbada Adityabhai Dineshbhai</h3>
+                    <p className="text-gray-500 text-sm mb-1">D.C.E.</p>
+                    <p className="text-violet-600 font-semibold text-sm">D.C.E.</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <div className="text-center group">
-              <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-2xl font-bold">HC</span>
+          </div>
+          
+          {/* Operations & Support */}
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Operations & Support</h3>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-purple-400 to-purple-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">SM</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Sunil Mandia</h3>
+                    <p className="text-gray-500 text-sm mb-1">I.T.I.</p>
+                    <p className="text-purple-600 font-semibold text-sm">Billing</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Harendra Ranjitsinh Chudasama</h3>
-              <p className="text-bhal-600 font-medium text-sm">Partner</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-2xl font-bold">SG</span>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-slate-400 to-slate-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">BP</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Bhadresh D. Patel</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.Com</p>
+                    <p className="text-slate-600 font-semibold text-sm">Accounts</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Subhash C. Gupta</h3>
-              <p className="text-bhal-600 font-medium text-sm">Sr. G.M.</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-2xl font-bold">RHC</span>
+              
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md flex items-center space-x-4">
+                  <div className="relative w-16 h-16 rounded-full bg-gradient-to-br from-slate-400 to-slate-500 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105 flex-shrink-0">
+                    <span className="text-white text-sm font-bold">AP</span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1 truncate">Ashok N. Patel</h3>
+                    <p className="text-gray-500 text-sm mb-1">B.Com</p>
+                    <p className="text-slate-600 font-semibold text-sm">Accounts</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Rudraduttsinh H. Chudasama</h3>
-              <p className="text-bhal-600 font-medium text-sm">Partner</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="relative w-32 h-32 mx-auto mb-4 rounded-full bg-bhal-800 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-                <span className="text-white text-2xl font-bold">SC</span>
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-1">Shivrajsinh Chudasma</h3>
-              <p className="text-bhal-600 font-medium text-sm">External Advisor</p>
             </div>
           </div>
         </div>
@@ -193,18 +368,18 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 h-full w-0.5 -translate-x-1/2 bg-gray-200"></div>
+            {/* Timeline line - centered on desktop, left-aligned on mobile */}
+            <div className="absolute left-6 md:left-1/2 h-full w-0.5 md:-translate-x-1/2 bg-gray-200"></div>
 
             {/* Timeline items */}
             <div className="space-y-12">
               <div className="relative">
-                <div className="flex items-center justify-center">
-                  <div className="absolute z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs">
+                <div className="flex items-center md:justify-center">
+                  <div className="absolute left-3 md:left-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs md:-translate-x-1/2">
                     1967
                   </div>
                 </div>
-                <div className="ml-auto mr-8 w-5/12 rounded-lg bg-white p-6 shadow-md md:mr-0 md:w-5/12">
+                <div className="ml-20 md:ml-auto md:mr-8 md:w-5/12 rounded-lg bg-white p-6 shadow-md">
                   <h3 className="text-xl font-bold">Company Founded</h3>
                   <p className="mt-2 text-gray-600">
                     BHAL Group was established with a focus on construction and engineering services.
@@ -213,12 +388,12 @@ export default function AboutPage() {
               </div>
 
               <div className="relative">
-                <div className="flex items-center justify-center">
-                  <div className="absolute z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs">
+                <div className="flex items-center md:justify-center">
+                  <div className="absolute left-3 md:left-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs md:-translate-x-1/2">
                     1980
                   </div>
                 </div>
-                <div className="ml-8 mr-auto w-5/12 rounded-lg bg-white p-6 shadow-md md:ml-0 md:w-5/12">
+                <div className="ml-20 md:ml-8 md:mr-auto md:w-5/12 rounded-lg bg-white p-6 shadow-md">
                   <h3 className="text-xl font-bold">Expansion into Industrial Construction</h3>
                   <p className="mt-2 text-gray-600">
                     Expanded services to include specialized industrial construction projects and infrastructure development.
@@ -227,12 +402,12 @@ export default function AboutPage() {
               </div>
 
               <div className="relative">
-                <div className="flex items-center justify-center">
-                  <div className="absolute z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs">
+                <div className="flex items-center md:justify-center">
+                  <div className="absolute left-3 md:left-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-xs text-white md:-translate-x-1/2">
                     1995
                   </div>
                 </div>
-                <div className="ml-auto mr-8 w-5/12 rounded-lg bg-white p-6 shadow-md md:mr-0 md:w-5/12">
+                <div className="ml-20 md:ml-auto md:mr-8 md:w-5/12 rounded-lg bg-white p-6 shadow-md">
                   <h3 className="text-xl font-bold">Quality Certification</h3>
                   <p className="mt-2 text-gray-600">
                     Achieved quality management certifications, demonstrating our commitment to excellence.
@@ -241,12 +416,12 @@ export default function AboutPage() {
               </div>
 
               <div className="relative">
-                <div className="flex items-center justify-center">
-                  <div className="absolute z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs">
+                <div className="flex items-center md:justify-center">
+                  <div className="absolute left-3 md:left-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs md:-translate-x-1/2">
                     2010
                   </div>
                 </div>
-                <div className="ml-8 mr-auto w-5/12 rounded-lg bg-white p-6 shadow-md md:ml-0 md:w-5/12">
+                <div className="ml-20 md:ml-8 md:mr-auto md:w-5/12 rounded-lg bg-white p-6 shadow-md">
                   <h3 className="text-xl font-bold">Technology Integration</h3>
                   <p className="mt-2 text-gray-600">
                     Embraced modern construction technologies and project management systems.
@@ -255,12 +430,12 @@ export default function AboutPage() {
               </div>
 
               <div className="relative">
-                <div className="flex items-center justify-center">
-                  <div className="absolute z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs">
+                <div className="flex items-center md:justify-center">
+                  <div className="absolute left-3 md:left-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs md:-translate-x-1/2">
                     2020
                   </div>
                 </div>
-                <div className="ml-auto mr-8 w-5/12 rounded-lg bg-white p-6 shadow-md md:mr-0 md:w-5/12">
+                <div className="ml-20 md:ml-auto md:mr-8 md:w-5/12 rounded-lg bg-white p-6 shadow-md">
                   <h3 className="text-xl font-bold">Sustainability Initiative</h3>
                   <p className="mt-2 text-gray-600">
                     Launched comprehensive sustainability program, committing to eco-friendly construction practices.
@@ -269,12 +444,12 @@ export default function AboutPage() {
               </div>
 
               <div className="relative">
-                <div className="flex items-center justify-center">
-                  <div className="absolute z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white">
+                <div className="flex items-center md:justify-center">
+                  <div className="absolute left-3 md:left-1/2 z-10 flex h-12 w-12 items-center justify-center rounded-full bg-bhal-800 text-white text-xs md:-translate-x-1/2">
                     Today
                   </div>
                 </div>
-                <div className="ml-8 mr-auto w-5/12 rounded-lg bg-white p-6 shadow-md md:ml-0 md:w-5/12">
+                <div className="ml-20 md:ml-8 md:mr-auto md:w-5/12 rounded-lg bg-white p-6 shadow-md">
                   <h3 className="text-xl font-bold">Industry Leadership</h3>
                   <p className="mt-2 text-gray-600">
                     BHAL Group continues to lead the industry with innovative approaches and a commitment to excellence.
