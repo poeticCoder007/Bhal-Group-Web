@@ -123,56 +123,45 @@ export default function ServicesPage() {
         className="bg-gray-50 py-16 md:py-24 opacity-0 translate-y-4 transition-all duration-700"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            <div className="relative">
-              <Image
-                src="/images/projects/steel-structure-construction.jpg"
-                alt="Industrial construction project showcase"
-                width={600}
-                height={800}
-                className="rounded-lg object-cover h-full"
-              />
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">Industrial Construction Expertise</h2>
+            <p className="text-lg text-gray-600 mb-12">
+              BHAL Group specializes in industrial construction projects that require precision, expertise, and
+              adherence to strict safety standards. Our team has extensive experience working in operational
+              facilities, minimizing disruptions while delivering quality results.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="flex items-start text-left">
+                <CheckCircle2 className="h-6 w-6 text-bhal-600 mt-1 mr-4 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-lg text-gray-900 mb-2">Plant Construction & Expansion</h4>
+                  <p className="text-gray-600">
+                    Complete construction and expansion services for manufacturing plants and industrial
+                    facilities with minimal operational disruption.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start text-left">
+                <CheckCircle2 className="h-6 w-6 text-bhal-600 mt-1 mr-4 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-lg text-gray-900 mb-2">Structural Steel Fabrication & Erection</h4>
+                  <p className="text-gray-600">
+                    Custom steel fabrication and installation for industrial structures and frameworks.
+                  </p>
+                </div>
+              </div>
             </div>
+            
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Industrial Construction Expertise</h2>
-              <p className="mt-4 text-lg text-gray-600">
-                BHAL Group specializes in industrial construction projects that require precision, expertise, and
-                adherence to strict safety standards. Our team has extensive experience working in operational
-                facilities, minimizing disruptions while delivering quality results.
-              </p>
-              
-              <div className="mt-8 space-y-6">
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-bhal-600 mt-1 mr-4 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-lg text-gray-900">Plant Construction & Expansion</h4>
-                    <p className="text-gray-600 mt-1">
-                      Complete construction and expansion services for manufacturing plants and industrial
-                      facilities with minimal operational disruption.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <CheckCircle2 className="h-6 w-6 text-bhal-600 mt-1 mr-4 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-lg text-gray-900">Structural Steel Fabrication & Erection</h4>
-                    <p className="text-gray-600 mt-1">
-                      Custom steel fabrication and installation for industrial structures and frameworks.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-10">
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center bg-bhal-600 text-white px-6 py-3 rounded-lg hover:bg-bhal-700 transition-colors font-medium"
-                >
-                  View our industrial projects
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </div>
+              <Link
+                href="/projects"
+                className="inline-flex items-center bg-bhal-600 text-white px-6 py-3 rounded-lg hover:bg-bhal-700 transition-colors font-medium"
+              >
+                View our industrial projects
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </div>
           </div>
         </div>

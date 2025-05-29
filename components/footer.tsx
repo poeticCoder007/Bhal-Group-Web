@@ -31,7 +31,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-md">
-              Delivering excellence in industrial construction, civil infrastructure, and support services through our partnership between BHAL Group and Rajarshi Construction Co.
+              Delivering excellence in industrial construction, civil infrastructure, and support services through our partnership between BHAL Construction Co. and Rajarshi Construction Co.
             </p>
             <div className="flex space-x-4">
               <Link href="#" className="text-gray-400 hover:text-white transition-colors">
