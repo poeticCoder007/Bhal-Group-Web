@@ -243,7 +243,7 @@ export default function Home() {
                           alt={`${client.name} logo`}
                           width={120}
                           height={60}
-                          className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                          className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
                           style={{
                             width: 'auto',
                             height: 'auto',
@@ -290,7 +290,7 @@ export default function Home() {
                             alt={`${consultant.name} logo`}
                             width={120}
                             height={60}
-                            className="max-w-full max-h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110"
+                            className="max-w-full max-h-full object-contain transition-all duration-500 group-hover:scale-110"
                             style={{
                               width: 'auto',
                               height: 'auto',
