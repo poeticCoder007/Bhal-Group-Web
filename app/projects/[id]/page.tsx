@@ -5,7 +5,8 @@ import { useParams, notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Calendar, MapPin, FileText, Building } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { ArrowLeft, Calendar, MapPin, FileText, Building, ArrowRight } from "lucide-react"
 import { projects, type Project } from "@/data/projects"
 
 export default function ProjectDetailPage() {
@@ -153,34 +154,77 @@ export default function ProjectDetailPage() {
       {/* Related Projects */}
       <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold mb-8">Related Projects</h2>
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Related Projects</h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore similar projects from our extensive portfolio in the {project.category === 'industrial-civil' ? 'industrial civil' : 'sub-station'} category.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {projects
               .filter((p) => p.category === project.category && p.id !== project.id)
               .slice(0, 3)
               .map((relatedProject) => (
-                <div key={relatedProject.id} className="group relative overflow-hidden rounded-lg">
-                  <Image
-                    src={relatedProject.image || "/images/projects/steel-structure-construction.jpg"}
-                    alt={relatedProject.title}
-                    width={800}
-                    height={600}
-                    className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-                    <h3 className="text-xl font-bold text-white">{relatedProject.title}</h3>
-                    <p className="text-gray-200">{relatedProject.location}</p>
-                    <Link
-                      href={`/projects/${relatedProject.id}`}
-                      className="mt-2 inline-flex items-center text-white hover:underline"
-                    >
-                      View Project
-                      <ArrowLeft className="ml-2 h-4 w-4 rotate-180" />
-                    </Link>
-                  </div>
-                </div>
+                <Card key={relatedProject.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md flex flex-col h-full">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`p-3 rounded-lg ${relatedProject.category === 'industrial-civil' ? 'bg-primary/10' : 'bg-bhal-50'}`}>
+                        <Building className={`h-8 w-8 ${relatedProject.category === 'industrial-civil' ? 'text-primary' : 'text-bhal-600'}`} />
+                      </div>
+                      <div className="flex gap-2">
+                        {relatedProject.tag && (
+                          <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
+                            relatedProject.tag === 'BHAL' 
+                              ? 'bg-bhal-100 text-bhal-800 border border-bhal-200' 
+                              : 'bg-blue-100 text-blue-800 border border-blue-200'
+                          }`}>
+                            {relatedProject.tag}
+                          </span>
+                        )}
+                        <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${relatedProject.category === 'industrial-civil' ? 'bg-primary/10 text-primary' : 'bg-bhal-50 text-bhal-700'}`}>
+                          {relatedProject.category === "industrial-civil" ? "Industrial Civil" : "Sub-Station Jobs"}
+                        </span>
+                      </div>
+                    </div>
+                    <CardTitle className="text-xl mb-2 line-clamp-2 min-h-[3.5rem]">{relatedProject.title}</CardTitle>
+                    <CardDescription className="text-gray-600 line-clamp-1">
+                      {relatedProject.client}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0 flex-1 flex flex-col">
+                    <div className="space-y-3 mb-6 flex-1">
+                      <div className="flex items-center text-sm text-gray-500">
+                        <MapPin className="mr-2 h-4 w-4 flex-shrink-0" />
+                        <span className="line-clamp-1">{relatedProject.location}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Calendar className="mr-2 h-4 w-4 flex-shrink-0" />
+                        <span>{relatedProject.year}</span>
+                      </div>
+                      <div className="text-sm font-medium text-bhal-700">
+                        Value: ₹{relatedProject.workDoneValue >= 100 ? `${(relatedProject.workDoneValue / 100).toFixed(2)} Crore` : `${relatedProject.workDoneValue} Lakhs`}
+                      </div>
+                    </div>
+                    <div className="pt-4 border-t border-gray-100 mt-auto">
+                      <Link
+                        href={`/projects/${relatedProject.id}`}
+                        className="inline-flex items-center text-primary hover:text-bhal-700 font-medium transition-colors"
+                      >
+                        View Project Details
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
           </div>
+          {projects.filter((p) => p.category === project.category && p.id !== project.id).length > 3 && (
+            <div className="mt-12 text-center">
+              <Button asChild variant="outline">
+                <Link href="/projects">View All Projects</Link>
+              </Button>
+            </div>
+          )}
         </div>
       </section>
     </div>
