@@ -5,14 +5,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Building2, HardHat, CheckCircle2, ArrowRight } from "lucide-react"
+import { Building2, CheckCircle2, ArrowRight } from "lucide-react"
 
 export default function ServicesPage() {
   const sectionRefs = {
     intro: useRef<HTMLElement>(null),
     industrial: useRef<HTMLElement>(null),
-    maintenance: useRef<HTMLElement>(null),
     cta: useRef<HTMLElement>(null),
   }
 
@@ -51,7 +49,7 @@ export default function ServicesPage() {
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Our Services</h1>
             <p className="mt-6 max-w-3xl mx-auto text-xl text-gray-300">
-              Comprehensive construction solutions tailored to your specific needs.
+              Specialized industrial construction solutions tailored to your specific needs.
             </p>
           </div>
         </div>
@@ -61,216 +59,64 @@ export default function ServicesPage() {
       <section ref={sectionRefs.intro} className="py-16 md:py-24 opacity-0 translate-y-4 transition-all duration-700">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Comprehensive Construction Solutions</h2>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Industrial Construction Excellence</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              BHAL Group offers a wide range of construction services to meet the diverse needs of our clients. From
-              industrial construction to ongoing support, our experienced team delivers quality results on time and
+              BHAL Group specializes in industrial construction projects that require precision, expertise, and
+              adherence to strict safety standards. Our experienced team delivers quality results on time and
               within budget.
             </p>
           </div>
 
-          <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="all">All Services</TabsTrigger>
-              <TabsTrigger value="industrial">Industrial</TabsTrigger>
-              <TabsTrigger value="maintenance">Support</TabsTrigger>
-            </TabsList>
-            <TabsContent value="all" className="mt-8">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <Card className="transition-all hover:shadow-xl duration-300 border-0 shadow-md group">
-                  <CardHeader className="pb-4">
-                    <div className="mb-4">
-                      <Building2 className="h-12 w-12 text-bhal-600 group-hover:text-bhal-700 transition-colors" />
-                    </div>
-                    <CardTitle className="text-xl mb-2">Industrial Construction</CardTitle>
-                    <CardDescription className="text-gray-600">
-                      Specialized construction services for manufacturing, processing, and industrial facilities.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <ul className="space-y-3 text-sm text-gray-600 mb-6">
-                      <li className="flex items-center">
-                        <CheckCircle2 className="h-4 w-4 text-bhal-600 mr-3 flex-shrink-0" />
-                        <span>Plant Construction & Expansion</span>
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle2 className="h-4 w-4 text-bhal-600 mr-3 flex-shrink-0" />
-                        <span>Equipment Installation</span>
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle2 className="h-4 w-4 text-bhal-600 mr-3 flex-shrink-0" />
-                        <span>Process Piping & Mechanical</span>
-                      </li>
-                    </ul>
-                    <div className="pt-4 border-t border-gray-100">
-                      <Link
-                        href="#industrial"
-                        className="inline-flex items-center text-primary hover:text-bhal-700 font-medium transition-colors"
-                      >
-                        Learn more
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className="transition-all hover:shadow-xl duration-300 border-0 shadow-md group">
-                  <CardHeader className="pb-4">
-                    <div className="mb-4">
-                      <HardHat className="h-12 w-12 text-bhal-600 group-hover:text-bhal-700 transition-colors" />
-                    </div>
-                    <CardTitle className="text-xl mb-2">Support</CardTitle>
-                    <CardDescription className="text-gray-600">
-                      Ensuring the longevity and efficiency of your facilities and infrastructure.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <ul className="space-y-3 text-sm text-gray-600 mb-6">
-                      <li className="flex items-center">
-                        <CheckCircle2 className="h-4 w-4 text-bhal-600 mr-3 flex-shrink-0" />
-                        <span>Preventative Maintenance</span>
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle2 className="h-4 w-4 text-bhal-600 mr-3 flex-shrink-0" />
-                        <span>Emergency Repairs</span>
-                      </li>
-                      <li className="flex items-center">
-                        <CheckCircle2 className="h-4 w-4 text-bhal-600 mr-3 flex-shrink-0" />
-                        <span>Facility Upgrades & Retrofits</span>
-                      </li>
-                    </ul>
-                    <div className="pt-4 border-t border-gray-100">
-                      <Link
-                        href="#maintenance"
-                        className="inline-flex items-center text-primary hover:text-bhal-700 font-medium transition-colors"
-                      >
-                        Learn more
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-            <TabsContent value="industrial" className="mt-8">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div>
-                  <h3 className="text-2xl font-bold">Industrial Construction</h3>
-                  <p className="mt-4 text-lg text-gray-600">
-                    Our industrial construction services are designed to meet the unique needs of manufacturing,
-                    processing, and industrial facilities. We understand the complexities of industrial projects and
-                    deliver solutions that enhance operational efficiency and productivity.
-                  </p>
-                  <ul className="mt-6 space-y-4">
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-bhal-800 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-semibold">Plant Construction & Expansion</h4>
-                        <p className="text-gray-600">
-                          Complete construction and expansion services for manufacturing plants and industrial
-                          facilities.
-                        </p>
-                      </div>
+          <div className="max-w-4xl mx-auto">
+            <Card className="transition-all hover:shadow-xl duration-300 border-0 shadow-lg group">
+              <CardHeader className="pb-6 text-center">
+                <div className="mb-6 flex justify-center">
+                  <Building2 className="h-16 w-16 text-bhal-600 group-hover:text-bhal-700 transition-colors" />
+                </div>
+                <CardTitle className="text-2xl mb-4">Industrial Construction</CardTitle>
+                <CardDescription className="text-gray-600 text-lg">
+                  Specialized construction services for manufacturing, processing, and industrial facilities.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="pt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <ul className="space-y-4 text-gray-600">
+                    <li className="flex items-center">
+                      <CheckCircle2 className="h-5 w-5 text-bhal-600 mr-3 flex-shrink-0" />
+                      <span>Plant Construction & Expansion</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-bhal-800 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-semibold">Equipment Installation</h4>
-                        <p className="text-gray-600">Precision installation of industrial equipment and machinery.</p>
-                      </div>
+                    <li className="flex items-center">
+                      <CheckCircle2 className="h-5 w-5 text-bhal-600 mr-3 flex-shrink-0" />
+                      <span>Structural Steel Fabrication & Erection</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-bhal-800 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-semibold">Process Piping & Mechanical</h4>
-                        <p className="text-gray-600">
-                          Specialized piping and mechanical systems for industrial processes.
-                        </p>
-                      </div>
+                  </ul>
+                  <ul className="space-y-4 text-gray-600">
+                    <li className="flex items-center">
+                      <CheckCircle2 className="h-5 w-5 text-bhal-600 mr-3 flex-shrink-0" />
+                      <span>Manufacturing Facilities</span>
                     </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-bhal-800 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-semibold">Structural Steel Fabrication & Erection</h4>
-                        <p className="text-gray-600">
-                          Custom steel fabrication and installation for industrial structures.
-                        </p>
-                      </div>
+                    <li className="flex items-center">
+                      <CheckCircle2 className="h-5 w-5 text-bhal-600 mr-3 flex-shrink-0" />
+                      <span>Warehouses & Distribution Centers</span>
                     </li>
                   </ul>
                 </div>
-                <div className="relative">
-                  <Image
-                    src="/images/projects/steel-structure-construction.jpg"
-                    alt="Construction project showcase"
-                    width={800}
-                    height={600}
-                    className="rounded-lg object-cover h-full"
-                  />
+                <div className="pt-6 border-t border-gray-100 text-center">
+                  <Link
+                    href="#industrial"
+                    className="inline-flex items-center text-bhal-600 hover:text-bhal-700 font-medium transition-colors text-lg"
+                  >
+                    Learn more about our industrial construction services
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </div>
-              </div>
-            </TabsContent>
-            <TabsContent value="maintenance" className="mt-8">
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                <div>
-                  <h3 className="text-2xl font-bold">Support</h3>
-                  <p className="mt-4 text-lg text-gray-600">
-                    Our support services help extend the life of your facilities and infrastructure while ensuring
-                    optimal performance. We offer both preventative maintenance programs and responsive repair
-                    services.
-                  </p>
-                  <ul className="mt-6 space-y-4">
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-bhal-800 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-semibold">Preventative Maintenance</h4>
-                        <p className="text-gray-600">
-                          Scheduled maintenance to prevent costly breakdowns and extend asset life.
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-bhal-800 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-semibold">Emergency Repairs</h4>
-                        <p className="text-gray-600">Rapid response services for unexpected issues and breakdowns.</p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-bhal-800 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-semibold">Facility Upgrades & Retrofits</h4>
-                        <p className="text-gray-600">
-                          Modernization of existing facilities to improve efficiency and functionality.
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <CheckCircle2 className="h-5 w-5 text-bhal-800 mt-1 mr-3" />
-                      <div>
-                        <h4 className="font-semibold">Equipment Servicing</h4>
-                        <p className="text-gray-600">
-                          Regular servicing and maintenance of industrial equipment and machinery.
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div className="relative">
-                  <Image
-                    src="/images/projects/building-construction.jpg"
-                    alt="Maintenance and support services"
-                    width={800}
-                    height={600}
-                    className="rounded-lg object-cover h-full"
-                  />
-                </div>
-              </div>
-            </TabsContent>
-          </Tabs>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
-      {/* Industrial Construction */}
+      {/* Industrial Construction Detailed */}
       <section
         id="industrial"
         ref={sectionRefs.industrial}
@@ -281,68 +127,50 @@ export default function ServicesPage() {
             <div className="relative">
               <Image
                 src="/images/projects/steel-structure-construction.jpg"
-                alt="Construction project showcase"
+                alt="Industrial construction project showcase"
                 width={600}
                 height={800}
                 className="rounded-lg object-cover h-full"
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Industrial Construction</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Industrial Construction Expertise</h2>
               <p className="mt-4 text-lg text-gray-600">
                 BHAL Group specializes in industrial construction projects that require precision, expertise, and
                 adherence to strict safety standards. Our team has extensive experience working in operational
                 facilities, minimizing disruptions while delivering quality results.
               </p>
-              <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-bhal-800">Manufacturing Facilities</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-gray-600">
-                      Construction and expansion of manufacturing plants with minimal operational disruption.
+              
+              <div className="mt-8 space-y-6">
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-6 w-6 text-bhal-600 mt-1 mr-4 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-lg text-gray-900">Plant Construction & Expansion</h4>
+                    <p className="text-gray-600 mt-1">
+                      Complete construction and expansion services for manufacturing plants and industrial
+                      facilities with minimal operational disruption.
                     </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-bhal-800">Processing Plants</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-gray-600">
-                      Specialized construction for food, chemical, and other processing facilities.
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <CheckCircle2 className="h-6 w-6 text-bhal-600 mt-1 mr-4 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-lg text-gray-900">Structural Steel Fabrication & Erection</h4>
+                    <p className="text-gray-600 mt-1">
+                      Custom steel fabrication and installation for industrial structures and frameworks.
                     </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-bhal-800">Warehouses & Distribution</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-gray-600">
-                      Large-scale warehouse and distribution center construction and retrofitting.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-bhal-800">Energy Facilities</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-gray-600">
-                      Construction services for power generation and distribution facilities.
-                    </p>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </div>
-              <div className="mt-8">
+              
+              <div className="mt-10">
                 <Link
-                  href="/projects?category=industrial"
-                  className="inline-flex items-center text-primary hover:underline"
+                  href="/projects"
+                  className="inline-flex items-center bg-bhal-600 text-white px-6 py-3 rounded-lg hover:bg-bhal-700 transition-colors font-medium"
                 >
-                  View industrial projects
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  View our industrial projects
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </div>
             </div>
@@ -350,112 +178,76 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Support */}
-      <section
-        id="maintenance"
-        ref={sectionRefs.maintenance}
-        className="py-16 md:py-24 opacity-0 translate-y-4 transition-all duration-700"
-      >
+      {/* Types of Industrial Projects */}
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Support</h2>
-              <p className="mt-4 text-lg text-gray-600">
-                Our support services help extend the life of your facilities and infrastructure while ensuring
-                optimal performance. We offer both preventative maintenance programs and responsive repair
-                services to keep your operations running smoothly.
-              </p>
-              <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-bhal-800">Preventative Maintenance</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-gray-600">
-                      Scheduled maintenance to prevent costly breakdowns and extend asset life.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-bhal-800">Emergency Services</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-gray-600">
-                      24/7 emergency response for critical infrastructure and facility issues.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-bhal-800">Facility Upgrades</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-gray-600">
-                      Modernization of existing facilities to improve efficiency and functionality.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card className="border-0 shadow-md hover:shadow-lg transition-shadow">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-bhal-800">Equipment Servicing</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-gray-600">
-                      Regular servicing and maintenance of industrial equipment and machinery.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-              <div className="mt-8">
-                <Link href="/contact" className="inline-flex items-center text-primary hover:underline">
-                  Request support services
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-            <div className="relative order-first md:order-last">
-              <Image
-                src="/images/projects/building-construction.jpg"
-                alt="Maintenance and support services"
-                width={600}
-                height={800}
-                className="rounded-lg object-cover h-full"
-              />
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Types of Industrial Projects</h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+              We work across various industrial sectors, providing specialized construction solutions for each industry's unique requirements.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow group">
+              <CardHeader className="pb-3 text-center">
+                <CardTitle className="text-xl text-bhal-800 group-hover:text-bhal-900 transition-colors">Manufacturing Facilities</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0 text-center">
+                <p className="text-gray-600">
+                  Construction and expansion of manufacturing plants across various industries.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow group">
+              <CardHeader className="pb-3 text-center">
+                <CardTitle className="text-xl text-bhal-800 group-hover:text-bhal-900 transition-colors">Processing Plants</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0 text-center">
+                <p className="text-gray-600">
+                  Specialized construction for chemical, food, and other processing facilities.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow group">
+              <CardHeader className="pb-3 text-center">
+                <CardTitle className="text-xl text-bhal-800 group-hover:text-bhal-900 transition-colors">Warehouses & Distribution</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0 text-center">
+                <p className="text-gray-600">
+                  Large-scale warehouse and distribution center construction and retrofitting.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-0 shadow-md hover:shadow-lg transition-shadow group">
+              <CardHeader className="pb-3 text-center">
+                <CardTitle className="text-xl text-bhal-800 group-hover:text-bhal-900 transition-colors">Energy Facilities</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-0 text-center">
+                <p className="text-gray-600">
+                  Construction services for power generation and distribution facilities.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section
-        ref={sectionRefs.cta}
-        className="bg-gray-50 py-16 md:py-24 opacity-0 translate-y-4 transition-all duration-700"
-      >
+      <section ref={sectionRefs.cta} className="bg-bhal-50 py-16 md:py-24 opacity-0 translate-y-4 transition-all duration-700">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl bg-bhal-50 p-8 md:p-12">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ready to Discuss Your Project?</h2>
-                <p className="mt-4 text-lg text-gray-600">
-                  Contact us today to learn more about our services and how we can help bring your construction project
-                  to life.
-                </p>
-                <div className="mt-8">
-                  <Button size="lg" asChild>
-                    <Link href="/contact">Contact Us</Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="flex items-center justify-center">
-                <Image
-                  src="/images/about/construction-team.jpg"
-                  alt="Construction team meeting"
-                  width={600}
-                  height={400}
-                  className="rounded-lg object-cover"
-                />
-              </div>
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Ready to Start Your Industrial Project?</h2>
+            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+              Contact BHAL Group today to discuss your industrial construction needs and how we can help bring your project to life with our specialized expertise.
+            </p>
+            <div className="mt-8 flex justify-center">
+              <Button size="lg" asChild>
+                <Link href="/contact">Get Started</Link>
+              </Button>
             </div>
           </div>
         </div>

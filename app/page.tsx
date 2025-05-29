@@ -169,11 +169,10 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Services</h2>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              We offer comprehensive solutions for industrial construction projects, from initial planning to ongoing
-              support.
+              We specialize in comprehensive industrial construction solutions, from initial planning to project completion.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
             <Card className="transition-all hover:shadow-xl duration-300 border-0 shadow-md group">
               <CardHeader className="pb-4">
                 <div className="mb-4">
@@ -192,52 +191,12 @@ export default function Home() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle2 className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
-                    <span>Equipment Installation</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
-                    <span>Process Piping & Mechanical</span>
+                    <span>Structural Steel Fabrication & Erection</span>
                   </li>
                 </ul>
                 <div className="pt-4 border-t border-gray-100">
                   <Link
-                    href="/services#industrial"
-                    className="inline-flex items-center text-primary hover:text-bhal-700 font-medium transition-colors"
-                  >
-                    Learn more
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="transition-all hover:shadow-xl duration-300 border-0 shadow-md group">
-              <CardHeader className="pb-4">
-                <div className="mb-4">
-                  <HardHat className="h-12 w-12 text-primary group-hover:text-bhal-700 transition-colors" />
-                </div>
-                <CardTitle className="text-xl mb-2">Support</CardTitle>
-                <CardDescription className="text-gray-600">
-                  Ensuring the longevity and efficiency of your facilities and infrastructure.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <ul className="space-y-3 text-sm text-gray-600 mb-6">
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
-                    <span>Preventative Maintenance</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
-                    <span>Emergency Repairs</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle2 className="h-4 w-4 text-primary mr-3 flex-shrink-0" />
-                    <span>Facility Upgrades & Retrofits</span>
-                  </li>
-                </ul>
-                <div className="pt-4 border-t border-gray-100">
-                  <Link
-                    href="/services#maintenance"
+                    href="/services"
                     className="inline-flex items-center text-primary hover:text-bhal-700 font-medium transition-colors"
                   >
                     Learn more
