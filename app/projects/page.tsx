@@ -5,9 +5,9 @@ import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { ArrowRight, Calendar, MapPin, FileText } from "lucide-react"
+import { ArrowRight, Calendar, MapPin, FileText, Building2 } from "lucide-react"
 import { projects, getProjectsByCategory, type Project } from "@/data/projects"
 
 // Utility function to format currency amounts
@@ -68,11 +68,10 @@ export default function ProjectsPage() {
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Tabs defaultValue={activeTab} value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-4">
+            <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="all">All Projects</TabsTrigger>
-              <TabsTrigger value="industrial">Industrial</TabsTrigger>
-              <TabsTrigger value="civil">Civil</TabsTrigger>
-              <TabsTrigger value="energy">Energy</TabsTrigger>
+              <TabsTrigger value="industrial-civil">Industrial Civil</TabsTrigger>
+              <TabsTrigger value="sub-station">Sub-Station Jobs</TabsTrigger>
             </TabsList>
             <TabsContent value={activeTab} className="mt-8">
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -81,42 +80,50 @@ export default function ProjectsPage() {
                     key={project.id}
                     className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0 shadow-md"
                   >
-                    <div className="aspect-video relative overflow-hidden">
-                      <Image
-                        src={project.image || "/images/projects/steel-structure-construction.jpg"}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-300 hover:scale-105"
-                      />
-                      <div className="absolute top-4 right-4">
-                        <span className="inline-block rounded-full bg-bhal-600 px-3 py-1 text-xs font-medium text-white shadow-lg">
-                          {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
-                        </span>
+                    <CardHeader className="pb-4">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className={`p-3 rounded-lg ${project.category === 'industrial-civil' ? 'bg-primary/10' : 'bg-bhal-50'}`}>
+                          <Building2 className={`h-8 w-8 ${project.category === 'industrial-civil' ? 'text-primary' : 'text-bhal-600'}`} />
+                        </div>
+                        <div className="flex gap-2">
+                          {project.tag && (
+                            <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
+                              project.tag === 'BHAL' 
+                                ? 'bg-bhal-100 text-bhal-800 border border-bhal-200' 
+                                : 'bg-blue-100 text-blue-800 border border-blue-200'
+                            }`}>
+                              {project.tag}
+                            </span>
+                          )}
+                          <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${project.category === 'industrial-civil' ? 'bg-primary/10 text-primary' : 'bg-bhal-50 text-bhal-700'}`}>
+                            {project.category === "industrial-civil" ? "Industrial Civil" : "Sub-Station Jobs"}
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold mb-3 line-clamp-2">{project.title}</h3>
-                      <div className="mb-4 flex flex-wrap gap-3">
+                      <CardTitle className="text-xl mb-2 line-clamp-2">{project.title}</CardTitle>
+                      <CardDescription className="text-gray-600">
+                        {project.client}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="space-y-3 mb-6">
                         <div className="flex items-center text-sm text-gray-500">
-                          <MapPin className="mr-1 h-3 w-3" />
+                          <MapPin className="mr-2 h-4 w-4" />
                           <span>{project.location}</span>
                         </div>
                         <div className="flex items-center text-sm text-gray-500">
-                          <Calendar className="mr-1 h-3 w-3" />
+                          <Calendar className="mr-2 h-4 w-4" />
                           <span>{project.year}</span>
                         </div>
-                      </div>
-                      <p className="text-gray-600 line-clamp-3 mb-4">{project.description}</p>
-                      <div className="flex flex-wrap gap-4 text-sm text-gray-500 mb-6">
-                        <div className="flex items-center">
-                          <FileText className="mr-1 h-3 w-3" />
+                        <div className="flex items-center text-sm text-gray-500">
+                          <FileText className="mr-2 h-4 w-4" />
                           <span>WO: {project.workOrderNo}</span>
                         </div>
-                        <div className="flex items-center font-medium text-bhal-700">
-                          <span>{formatCurrency(project.workDoneValue)}</span>
+                        <div className="text-sm font-medium text-bhal-700">
+                          Value: {formatCurrency(project.workDoneValue)}
                         </div>
                       </div>
-                      <div className="pt-2 border-t border-gray-100">
+                      <div className="pt-4 border-t border-gray-100">
                         <Link
                           href={`/projects/${project.id}`}
                           className="inline-flex items-center text-primary hover:text-bhal-700 font-medium transition-colors"
@@ -161,8 +168,17 @@ export default function ProjectsPage() {
             <div>
               <h3 className="text-2xl font-bold">{featuredProject.title}</h3>
               <div className="mt-2 flex flex-wrap gap-2">
+                {featuredProject.tag && (
+                  <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
+                    featuredProject.tag === 'BHAL' 
+                      ? 'bg-bhal-100 text-bhal-800 border border-bhal-200' 
+                      : 'bg-blue-100 text-blue-800 border border-blue-200'
+                  }`}>
+                    {featuredProject.tag}
+                  </span>
+                )}
                 <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                  {featuredProject.category.charAt(0).toUpperCase() + featuredProject.category.slice(1)}
+                  {featuredProject.category === "industrial-civil" ? "Industrial Civil" : "Sub-Station Jobs"}
                 </span>
                 <span className="flex items-center text-sm text-gray-500">
                   <MapPin className="mr-1 h-3 w-3" />

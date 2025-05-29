@@ -5,7 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Building2, HardHat, ArrowRight, CheckCircle2 } from "lucide-react"
+import { Building2, HardHat, ArrowRight, CheckCircle2, MapPin, Calendar } from "lucide-react"
 import { getFeaturedProjects } from "@/data/projects"
 
 export default function Home() {
@@ -55,13 +55,24 @@ export default function Home() {
         className="relative h-[90vh] min-h-[600px] w-full opacity-0 translate-y-4 transition-all duration-700"
       >
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero/construction-site-hero.jpg"
-            alt="Construction site with heavy machinery"
-            fill
-            priority
-            className="object-cover brightness-50"
-          />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="h-full w-full object-cover brightness-50"
+            poster="/images/hero/construction-site-hero.jpg"
+          >
+            <source src="/videos/hero-construction-background.mp4" type="video/mp4" />
+            {/* Fallback image for browsers that don't support video */}
+            <Image
+              src="/images/hero/construction-site-hero.jpg"
+              alt="Construction site with heavy machinery"
+              fill
+              priority
+              className="object-cover brightness-50"
+            />
+          </video>
         </div>
         <div className="relative z-10 flex h-full items-center">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -115,8 +126,8 @@ export default function Home() {
       {/* About/Intro Section */}
       <section ref={sectionRefs.about} className="py-16 md:py-24 opacity-0 translate-y-4 transition-all duration-700">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-            <div>
+          <div className="space-y-12">
+            <div className="text-center max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">About BHAL Group</h2>
               <p className="mt-4 text-lg text-gray-600">
                 With over 57 years of experience since our founding in 1967, BHAL Group has established itself as a leader in the construction
@@ -130,30 +141,26 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex flex-col space-y-4">
-                <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-primary">
-                  <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
-                  <h3 className="text-lg font-semibold mb-2">Quality</h3>
-                  <p className="text-gray-600">Delivering excellence in every project we undertake.</p>
-                </div>
-                <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-primary">
-                  <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
-                  <h3 className="text-lg font-semibold mb-2">Safety</h3>
-                  <p className="text-gray-600">Maintaining the highest safety standards in the industry.</p>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-primary">
+                <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
+                <h3 className="text-lg font-semibold mb-2">Quality</h3>
+                <p className="text-gray-600">Delivering excellence in every project we undertake.</p>
               </div>
-              <div className="flex flex-col space-y-4 mt-8">
-                <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-primary">
-                  <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
-                  <h3 className="text-lg font-semibold mb-2">Innovation</h3>
-                  <p className="text-gray-600">Embracing new technologies and methodologies.</p>
-                </div>
-                <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-primary">
-                  <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
-                  <h3 className="text-lg font-semibold mb-2">Reliability</h3>
-                  <p className="text-gray-600">Completing projects on time and within budget.</p>
-                </div>
+              <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-primary">
+                <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
+                <h3 className="text-lg font-semibold mb-2">Safety</h3>
+                <p className="text-gray-600">Maintaining the highest safety standards in the industry.</p>
+              </div>
+              <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-primary">
+                <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
+                <h3 className="text-lg font-semibold mb-2">Innovation</h3>
+                <p className="text-gray-600">Embracing new technologies and methodologies.</p>
+              </div>
+              <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow border-l-4 border-primary">
+                <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
+                <h3 className="text-lg font-semibold mb-2">Reliability</h3>
+                <p className="text-gray-600">Completing projects on time and within budget.</p>
               </div>
             </div>
           </div>
@@ -222,28 +229,57 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.map((project) => (
-              <div key={project.id} className="group relative overflow-hidden rounded-lg">
-                <Image
-                  src={project.image || "/images/projects/steel-structure-construction.jpg"}
-                  alt={project.title}
-                  width={800}
-                  height={600}
-                  className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
-                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                  <p className="text-gray-200">
-                    {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
-                  </p>
-                  <Link
-                    href={`/projects/${project.id}`}
-                    className="mt-2 inline-flex items-center text-white hover:underline"
-                  >
-                    View Project
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
+              <Card key={project.id} className="group hover:shadow-xl transition-all duration-300 border-0 shadow-md">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className={`p-3 rounded-lg ${project.category === 'industrial-civil' ? 'bg-primary/10' : 'bg-bhal-50'}`}>
+                      <Building2 className={`h-8 w-8 ${project.category === 'industrial-civil' ? 'text-primary' : 'text-bhal-600'}`} />
+                    </div>
+                    <div className="flex gap-2">
+                      {project.tag && (
+                        <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
+                          project.tag === 'BHAL' 
+                            ? 'bg-bhal-100 text-bhal-800 border border-bhal-200' 
+                            : 'bg-blue-100 text-blue-800 border border-blue-200'
+                        }`}>
+                          {project.tag}
+                        </span>
+                      )}
+                      <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${project.category === 'industrial-civil' ? 'bg-primary/10 text-primary' : 'bg-bhal-50 text-bhal-700'}`}>
+                        {project.category === "industrial-civil" ? "Industrial Civil" : "Sub-Station Jobs"}
+                      </span>
+                    </div>
+                  </div>
+                  <CardTitle className="text-xl mb-2 line-clamp-2">{project.title}</CardTitle>
+                  <CardDescription className="text-gray-600">
+                    {project.client}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center text-sm text-gray-500">
+                      <MapPin className="mr-2 h-4 w-4" />
+                      <span>{project.location}</span>
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <Calendar className="mr-2 h-4 w-4" />
+                      <span>{project.year}</span>
+                    </div>
+                    <div className="text-sm font-medium text-bhal-700">
+                      Value: ₹{project.workDoneValue >= 100 ? `${(project.workDoneValue / 100).toFixed(2)} Crore` : `${project.workDoneValue} Lakhs`}
+                    </div>
+                  </div>
+                  <div className="pt-4 border-t border-gray-100">
+                    <Link
+                      href={`/projects/${project.id}`}
+                      className="inline-flex items-center text-primary hover:text-bhal-700 font-medium transition-colors"
+                    >
+                      View Project Details
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
           <div className="mt-12 text-center">

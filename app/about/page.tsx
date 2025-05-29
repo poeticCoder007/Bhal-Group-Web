@@ -214,6 +214,16 @@ export default function AboutPage() {
                   </div>
                 </div>
               </div>
+
+              <div className="group">
+                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Sunil Mandia</h3>
+                    <p className="text-gray-500 text-sm mb-1">I.T.I.</p>
+                    <p className="text-purple-600 font-semibold text-sm">Billing</p>
+                  </div>
+                </div>
+              </div>
               
               <div className="group">
                 <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
@@ -238,7 +248,7 @@ export default function AboutPage() {
               <div className="group">
                 <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">Chhaparaj Bhambhala</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Chanparaj Bhambhala</h3>
                     <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
                     <p className="text-indigo-600 font-semibold text-sm">Sr. Engineer</p>
                   </div>
@@ -257,19 +267,10 @@ export default function AboutPage() {
             </div>
           </div>
           
-          {/* Operations & Support */}
+          {/* Office Operations */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Operations & Support</h3>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-              <div className="group">
-                <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">Sunil Mandia</h3>
-                    <p className="text-gray-500 text-sm mb-1">I.T.I.</p>
-                    <p className="text-purple-600 font-semibold text-sm">Billing</p>
-                  </div>
-                </div>
-              </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Office Operations</h3>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 max-w-2xl mx-auto">
               
               <div className="group">
                 <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">

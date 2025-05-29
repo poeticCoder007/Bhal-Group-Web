@@ -34,36 +34,36 @@ export default function ProjectDetailPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] w-full">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={project.image || "/images/projects/steel-structure-construction.jpg"}
-            alt={project.title}
-            fill
-            priority
-            className="object-cover brightness-50"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/40" />
-        <div className="relative z-10 flex h-full items-end">
-          <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 pb-12">
+      <section className="relative bg-gradient-to-br from-bhal-800 via-bhal-700 to-bhal-900 text-white">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        <div className="relative z-10 py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <Link href="/projects" className="inline-flex items-center text-white mb-4 hover:underline">
+              <Link href="/projects" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors duration-200 hover:underline">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Projects
               </Link>
-              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">{project.title}</h1>
-              <div className="mt-4 flex flex-wrap gap-4">
-                <span className="inline-block rounded-full bg-bhal-500 px-3 py-1 text-xs font-medium text-white">
-                  {project.category.charAt(0).toUpperCase() + project.category.slice(1)}
+              <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">{project.title}</h1>
+              <div className="mt-6 flex flex-wrap gap-4">
+                {project.tag && (
+                  <span className={`inline-block rounded-full px-4 py-2 text-sm font-medium ${
+                    project.tag === 'BHAL' 
+                      ? 'bg-white/10 text-white border border-white/20' 
+                      : 'bg-blue-500/20 text-blue-200 border border-blue-400/30'
+                  }`}>
+                    {project.tag}
+                  </span>
+                )}
+                <span className="inline-block rounded-full bg-white/10 border border-white/20 px-4 py-2 text-sm font-medium text-white">
+                  {project.category === 'industrial-civil' ? 'Industrial Civil' : 'Sub-Station'}
                 </span>
-                <div className="flex items-center text-gray-300">
-                  <MapPin className="mr-1 h-4 w-4" />
-                  <span>{project.location}</span>
+                <div className="flex items-center text-white/90">
+                  <MapPin className="mr-2 h-4 w-4" />
+                  <span className="text-sm font-medium">{project.location}</span>
                 </div>
-                <div className="flex items-center text-gray-300">
-                  <Calendar className="mr-1 h-4 w-4" />
-                  <span>{project.year}</span>
+                <div className="flex items-center text-white/90">
+                  <Calendar className="mr-2 h-4 w-4" />
+                  <span className="text-sm font-medium">{project.year}</span>
                 </div>
               </div>
             </div>

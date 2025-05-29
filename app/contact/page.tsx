@@ -85,8 +85,11 @@ export default function ContactPage() {
               <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
                 Contact BHAL Group today to discuss how we can help bring your construction project to life.
               </p>
-              <div className="mt-8 flex justify-center">
+              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <Button size="lg" asChild>
+                  <a href="mailto:bhalgroup614@gmail.com">Email Us</a>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
                   <a href="tel:+919909920959">Call Us Now</a>
                 </Button>
               </div>
