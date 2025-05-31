@@ -23,8 +23,17 @@ export default function TrustedPartnersSection() {
           <div className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-lg border border-gray-200/50">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
               {[
+                { name: "IOCL", logo: "/images/clients/iocl.png" },
+                { name: "Finolex Industries", logo: "/images/clients/finolex.png" },
+                { name: "Jindal Rail Infrastructure", logo: "/images/clients/jindalrail.png" },
+                { name: "Inox Air Products", logo: "/images/clients/inox.png" },
+                { name: "Indian Petrochemicals", logo: "/images/clients/indianpetrochem.jpeg" },
+                { name: "PGCIL", logo: "/images/clients/pgcil.png" },
+                { name: "GETCO", logo: "/images/clients/getco.png" },
+                { name: "NBCC Limited", logo: "/images/clients/nbcc.jpg" },
                 { name: "Linxon India", logo: "/images/clients/linxon.png" },
                 { name: "Ark Golden India", logo: "/images/clients/ark.png" },
+                { name: "Nandolia Organic", logo: "/images/clients/nandolia.png" },
                 { name: "Steelsmith Continental", logo: "/images/clients/steelsmith.png" },
                 { name: "Interplex Mazzucchelli", logo: "/images/clients/interplex.png" },
                 { name: "Aluplast India", logo: "/images/clients/aluplast.svg" },
@@ -40,19 +49,10 @@ export default function TrustedPartnersSection() {
                 { name: "L&T Construction", logo: "/images/clients/landt.png" },
                 { name: "ABB India", logo: "/images/clients/abb.webp" },
                 { name: "Lalit Rohr Fittings", logo: "/images/clients/lalitrohrlogo.jpg" },
-                { name: "Jindal Rail Infrastructure", logo: "/images/clients/jindalrail.png" },
                 { name: "EMC Limited", logo: "/images/clients/emc.jpg" },
                 { name: "Sagar Springs", logo: "/images/clients/sagarspings.png" },
-                { name: "Nandolia Organic", logo: "/images/clients/nandolia.png" },
-                { name: "Finolex Industries", logo: "/images/clients/finolex.png" },
-                { name: "Inox Air Products", logo: "/images/clients/inox.png" },
                 { name: "KDAC Chem", logo: "/images/clients/kdac.png" },
                 { name: "Damodar Engineering", logo: "/images/clients/damodar.png" },
-                { name: "NBCC Limited", logo: "/images/clients/nbcc.jpg" },
-                { name: "Indian Petrochemicals", logo: "/images/clients/indianpetrochem.jpeg" },
-                { name: "GETCO", logo: "/images/clients/getco.png" },
-                { name: "PGCIL", logo: "/images/clients/pgcil.png" },
-                { name: "IOCL", logo: "/images/clients/iocl.png" }
               ].map((client, i) => (
                 <div 
                   key={i} 
