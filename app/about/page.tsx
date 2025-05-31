@@ -65,7 +65,7 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-8">Our Mission</h2>
             <p className="mt-4 text-lg text-gray-600 text-center mb-12">
               At BHAL Group, our mission is to deliver exceptional construction services that exceed client
-              expectations, while maintaining the highest standards of safety, quality, and environmental
+              expectations, while maintaining the required industry standards of safety, quality, and environmental
               responsibility. We are committed to building infrastructure that stands the test of time and contributes
               positively to communities and industries.
             </p>
@@ -133,7 +133,7 @@ export default function AboutPage() {
                   <div className="flex-1 min-w-0">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">Late Viramdevsinh Chudasama</h3>
                     <p className="text-gray-500 text-sm mb-1">B.Com</p>
-                    <p className="text-bhal-600 font-semibold text-sm">Former Partner</p>
+                    <p className="text-bhal-600 font-semibold text-sm">Co-Founder</p>
                   </div>
                 </div>
               </div>
