@@ -133,7 +133,7 @@ export default function AboutPage() {
                   <div className="flex-1 min-w-0">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">Late Viramdevsinh Chudasama</h3>
                     <p className="text-gray-500 text-sm mb-1">B.Com</p>
-                    <p className="text-bhal-600 font-semibold text-sm">Co-Founder</p>
+                    <p className="text-bhal-600 font-semibold text-[13px]">Former Partner & Co-Founder (Rajarshi Construction)</p>
                   </div>
                 </div>
               </div>
