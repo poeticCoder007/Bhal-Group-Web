@@ -162,7 +162,7 @@ export default function AboutPage() {
                 <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
                     <h3 className="text-lg font-bold text-gray-900 mb-1">Rudraduttsinh H. Chudasama</h3>
-                    <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
+                    <p className="text-gray-500 text-sm mb-1">B.Tech. Civil</p>
                     <p className="text-bhal-600 font-semibold text-sm">Partner</p>
                   </div>
                 </div>
@@ -248,7 +248,7 @@ export default function AboutPage() {
               <div className="group">
                 <div className="bg-white rounded-lg p-6 group-hover:bg-gray-50 transition-colors duration-300 shadow-sm hover:shadow-md">
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">Chanparaj Bhambhala</h3>
+                    <h3 className="text-lg font-bold text-gray-900 mb-1">Champaraj Bhambhala</h3>
                     <p className="text-gray-500 text-sm mb-1">B.E. Civil</p>
                     <p className="text-indigo-600 font-semibold text-sm">Sr. Engineer</p>
                   </div>

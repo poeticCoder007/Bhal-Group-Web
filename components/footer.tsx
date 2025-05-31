@@ -71,16 +71,46 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Services</h3>
+            <h3 className="text-lg font-semibold mb-4">Find Us On</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/services#industrial" className="text-gray-400 hover:text-white transition-colors">
-                  Industrial Construction
+                <Link 
+                  href="https://www.indiamart.com/bhal-construction-co/?srsltid=AfmBOooztWWhmrOVEwKeuf-_wrrImzE4R3ge1DQ4J7WS7V23ihB1O_sW" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  IndiaMART - BHAL Construction Co.
                 </Link>
               </li>
               <li>
-                <Link href="/services#maintenance" className="text-gray-400 hover:text-white transition-colors">
-                  Support
+                <Link 
+                  href="https://www.indiamart.com/bhal-infrastructure/?srsltid=AfmBOorXceQinLuqlZGOwuFwZLe7d_bgnqVuFNj9xJtSvxt6hb0IsfSM" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  IndiaMART - Rajarshi Construction Co.
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="https://www.justdial.com/Vadodara/Bhal-Construction-Company-Alkapuri/0265P265STD6744_BZDET" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  JustDial
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="https://www.tradeindia.com/bhal-construction-co-7042702/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  TradeIndia
                 </Link>
               </li>
             </ul>
@@ -99,11 +129,11 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center">
                   <Phone className="h-5 w-5 mr-3 text-gray-400 flex-shrink-0" />
-                  <span className="text-gray-400 text-sm">+91 99099 20959</span>
+                  <span className="text-gray-400 text-sm">+91 94275 42723</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="h-5 w-5 mr-3 text-gray-400 flex-shrink-0" />
-                  <span className="text-gray-400 text-sm">bhalgroup614@gmail.com</span>
+                  <span className="text-gray-400 text-sm">info@bhalconstruction.net</span>
                 </div>
               </div>
             </div>

@@ -75,13 +75,13 @@ export default function Home() {
           >
             <source src="/videos/hero-construction-background.mp4" type="video/mp4" />
             {/* Fallback image for browsers that don't support video */}
-            <Image
-              src="/images/hero/construction-site-hero.jpg"
-              alt="Construction site with heavy machinery"
-              fill
-              priority
-              className="object-cover brightness-50"
-            />
+          <Image
+            src="/images/hero/construction-site-hero.jpg"
+            alt="Construction site with heavy machinery"
+            fill
+            priority
+            className="object-cover brightness-50"
+          />
           </video>
         </div>
         <div className="relative z-10 flex h-full items-center">
@@ -153,24 +153,24 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow">
-                <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
-                <h3 className="text-lg font-semibold mb-2">Quality</h3>
-                <p className="text-gray-600">Delivering excellence in every project we undertake.</p>
+                  <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
+                  <h3 className="text-lg font-semibold mb-2">Quality</h3>
+                  <p className="text-gray-600">Delivering excellence in every project we undertake.</p>
+                </div>
+              <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow">
+                  <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
+                  <h3 className="text-lg font-semibold mb-2">Safety</h3>
+                <p className="text-gray-600">Maintaining the safety standards in industries.</p>
               </div>
               <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow">
-                <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
-                <h3 className="text-lg font-semibold mb-2">Safety</h3>
-                <p className="text-gray-600">Maintaining the highest safety standards in the industry.</p>
-              </div>
+                  <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
+                  <h3 className="text-lg font-semibold mb-2">Innovation</h3>
+                  <p className="text-gray-600">Embracing new technologies and methodologies.</p>
+                </div>
               <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow">
-                <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
-                <h3 className="text-lg font-semibold mb-2">Innovation</h3>
-                <p className="text-gray-600">Embracing new technologies and methodologies.</p>
-              </div>
-              <div className="rounded-xl bg-white p-6 shadow-md hover:shadow-lg transition-shadow">
-                <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
-                <h3 className="text-lg font-semibold mb-2">Reliability</h3>
-                <p className="text-gray-600">Completing projects on time and within budget.</p>
+                  <CheckCircle2 className="h-10 w-10 text-primary mb-3" />
+                  <h3 className="text-lg font-semibold mb-2">Reliability</h3>
+                <p className="text-gray-600">Completing projects on time.</p>
               </div>
             </div>
           </div>
@@ -270,12 +270,15 @@ export default function Home() {
                   <p className="text-gray-600">Expert consulting partnerships for comprehensive project solutions</p>
                 </div>
                 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 max-w-5xl mx-auto">
                   {[
                     { name: "Vyom Consultants", logo: "/images/consultants/vyomlogo.png" },
                     { name: "Soft Skill Consultants", logo: "/images/consultants/softskill.png.avif" },
                     { name: "Bhagwati Consultants", logo: "/images/consultants/bhgwati.png" },
-                    { name: "Shah & Talati Associates", logo: "/images/consultants/shah&talati.png" }
+                    { name: "Shah & Talati Associates", logo: "/images/consultants/shah&talati.png" },
+                    { name: "Uhde India", logo: "/images/consultants/uhde.jpeg" },
+                    { name: "Engineers India Limited", logo: "/images/consultants/eil.png" },
+                    { name: "Associated Engineers", logo: "/images/consultants/aasociatedengin.png" }
                   ].map((consultant, i) => (
                     <div 
                       key={i} 
@@ -425,14 +428,14 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="pt-4 border-t border-gray-100 mt-auto">
-                    <Link
-                      href={`/projects/${project.id}`}
+                  <Link
+                    href={`/projects/${project.id}`}
                       className="inline-flex items-center text-primary hover:text-bhal-700 font-medium transition-colors"
-                    >
+                  >
                       View Project Details
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </div>
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
                 </CardContent>
               </Card>
             ))}
