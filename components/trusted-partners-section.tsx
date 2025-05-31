@@ -23,6 +23,7 @@ export default function TrustedPartnersSection() {
           <div className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-lg border border-gray-200/50">
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
               {[
+                { name: "L&T Construction", logo: "/images/clients/landt.png" },
                 { name: "IOCL", logo: "/images/clients/iocl.png" },
                 { name: "Finolex Industries", logo: "/images/clients/finolex.png" },
                 { name: "Jindal Rail Infrastructure", logo: "/images/clients/jindalrail.png" },
@@ -46,7 +47,6 @@ export default function TrustedPartnersSection() {
                 { name: "Koshambh Multitred", logo: "/images/clients/koshambh.png" },
                 { name: "Yashvin Industries", logo: "/images/clients/yashvin-industries.jpg" },
                 { name: "Stelmec Limited", logo: "/images/clients/stelmec.png" },
-                { name: "L&T Construction", logo: "/images/clients/landt.png" },
                 { name: "ABB India", logo: "/images/clients/abb.webp" },
                 { name: "Lalit Rohr Fittings", logo: "/images/clients/lalitrohrlogo.jpg" },
                 { name: "EMC Limited", logo: "/images/clients/emc.jpg" },
