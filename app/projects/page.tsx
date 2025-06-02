@@ -13,14 +13,7 @@ import TrustedPartnersSection from "@/components/trusted-partners-section"
 
 // Utility function to format currency amounts
 const formatCurrency = (amount: number) => {
-  if (amount >= 100) {
-    // Convert to crores if 100 lakhs or more
-    const crores = amount / 100
-    return `₹${crores.toFixed(2)} Crore`
-  } else {
-    // Keep as lakhs if less than 100 lakhs
-    return `₹${amount} Lakhs`
-  }
+  return `₹${amount} Lakhs`
 }
 
 export default function ProjectsPage() {

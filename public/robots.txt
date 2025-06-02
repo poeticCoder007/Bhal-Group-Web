@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# High-crawl rate pages
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://bhalgroup.com/sitemap.xml
+Sitemap: https://bhalgroup.com/sitemap-images.xml
+
+# Block unnecessary crawler access to system files
+Disallow: /_next/
+Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: *.json$
+
+# Allow search engines to crawl important content
+Allow: /services
+Allow: /projects
+Allow: /about
+Allow: /contact
+Allow: /images/
+Allow: /videos/ 
