@@ -33,12 +33,6 @@ export default function Footer() {
             <p className="text-sm text-gray-400 leading-relaxed max-w-md">
               Delivering excellence in industrial construction, civil infrastructure, and support services through our partnership between BHAL Construction Co. and Rajarshi Construction Co.
             </p>
-            <div className="flex space-x-4">
-              <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="h-5 w-5" />
-                <span className="sr-only">LinkedIn</span>
-              </Link>
-            </div>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
@@ -111,6 +105,16 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   TradeIndia
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="https://www.linkedin.com/company/bhal-group/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  LinkedIn
                 </Link>
               </li>
             </ul>
